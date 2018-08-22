@@ -17,4 +17,48 @@
     <servlet-name>servletEx</servlet-name>
     <url-pattern>/SE</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>jspObjectEx</servlet-name>
+    <jsp-file>/jspObjectEx.jsp</jsp-file>
+    <init-param>
+      <param-name>adminId</param-name>
+      <param-value>admin</param-value>
+    </init-param>
+    <init-param>
+      <param-name>adminPw</param-name>
+      <param-value>1234</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>jspObjectEx</servlet-name>
+    <url-pattern>/jspObjectEx.jsp</url-pattern>
+  </servlet-mapping>
+  <context-param>
+    <param-name>imgDir</param-name>
+    <param-value>/upload/img</param-value>
+  </context-param>
+  <context-param>
+    <param-name>testServerIP</param-name>
+    <param-value>127.0.0.1</param-value>
+  </context-param>
+  <context-param>
+    <param-name>realServerIP</param-name>
+    <param-value>127.0.0.1</param-value>
+  </context-param>
+  <servlet>
+    <servlet-name>servletEx2</servlet-name>
+    <servlet-class>com.servlet.servletEx2</servlet-class>
+    <init-param>
+      <param-name>adminId</param-name>
+      <param-value>admin</param-value>
+    </init-param>
+    <init-param>
+      <param-name>adminPw</param-name>
+      <param-value>1234</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>servletEx2</servlet-name>
+    <url-pattern>/se2</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -1,4 +1,6 @@
-# Dependency Injection
+
+# 20181012
+## Dependency Injection
 
 ### DI 란?
 * OOP에서 사용되는 전반적인 개념
@@ -7,3 +9,32 @@
 
 ### Spring에서의 DI
 * 컨테이너에 <bean>으로 생성되는 객체에 의존성을 가지는 객체가 있다. (의존성을 가진다.)
+
+# 20181013
+## 스프링 설정 파일 분리
+* 여러 개의 스프링 설정 파일을 String 배열로 묶어 한번에 applicationContext를 생성할 수 있다. (**주로 사용된다.**)
+* 하나의 스프링 설정 파일에서 <import resource="classpath:appCtx.xml"\> 과 같이 임포트하여 한 번에 추가할 수 있다.
+## Bean의 범위
+* 싱글톤
+   * 기존 Java에서는 new 로 객체를 생성했다.
+   * 하지만, Spring은 GenericXmlApplicationContext를 통해 Spring Container에 객체들을 생성해놓고, .getBean() 함수를 통해 **호출** 하는 것.
+   * 그래서 동일한 객체를 호출된다.
+* 프로토타입
+   * 싱글톤과 반대, 객체를 하나씩 생성한다.
+   * <bean> 태그의 scope 속성의 속성 값으로 prototype을 명시해주면 된다.
+   * 흔하지 않은 경우
+## 의존객체 자동 주입
+* 의존 객체를 주입할 때, 태그로 명시하지 않아도 자동으로 필요한 의존 객체를 찾아서 주입하는 기능
+* 구현 방법은 @Autowired와 @Resource 어노테이션을 사용할 수 있다.
+* @Autowired
+  * 해당 어노테이션으로 선언된 객체나 메소드에 필요한 객체를 자동으로 넣어준다.
+  * 타입을 보고 자동으로 넣어주는 것
+  * applicationContext.xml의 bean 태그의 속성 수정
+  * 필요한 생성자, 메소드에 @Autowired 명시
+  * 프로퍼티나 메소드에 @Autowired를 사용할 경우 디폴트 생성자를 선언해줘야함!
+* @Resource
+  - Autowired와 비슷함
+  - 하지만, 객체의 이름을 찾아 자동으로 넣어줌
+  - 생성자에는 사용하지 못함
+  - 프로퍼티나 메소드에 사용 가능. (디폴트 생성자 필수)
+  -

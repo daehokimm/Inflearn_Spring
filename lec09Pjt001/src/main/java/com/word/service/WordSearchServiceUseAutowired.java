@@ -9,6 +9,7 @@ import com.word.dao.WordDao;
 public class WordSearchServiceUseAutowired {
 	
 	@Autowired
+	@Qualifier("usedDao")
 //	@Qualifier("usedDao")
 	private WordDao wordDao;
 	

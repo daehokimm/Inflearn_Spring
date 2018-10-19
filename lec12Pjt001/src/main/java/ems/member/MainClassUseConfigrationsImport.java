@@ -7,7 +7,7 @@ import java.util.Set;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import ems.member.configration.MemberConfigImport;
+import ems.member.configration2.MemberConfig1;
 import ems.member.service.EMSInformationService;
 import ems.member.service.StudentAllSelectService;
 import ems.member.service.StudentModifyService;
@@ -42,7 +42,7 @@ public class MainClassUseConfigrationsImport {
 //		GenericXmlApplicationContext ctx = 
 //				new GenericXmlApplicationContext("classpath:appCtxImport.xml");
 		AnnotationConfigApplicationContext ctx = 
-				new AnnotationConfigApplicationContext(MemberConfigImport.class);
+				new AnnotationConfigApplicationContext(MemberConfig1.class);
 		
 		EMSInformationService informationService = ctx.getBean("informationService", EMSInformationService.class);
 		informationService.outputEMSInformation();
